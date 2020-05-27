@@ -55,7 +55,7 @@ While the internet might tell you that the refractive index of water is 1.33, it
 # Methods
 I developed the equation and coefficients above by reading tabulated values of the index of refraction from Mobley (2010) into MATLAB and doing surface fitting. The R2 values of my surface fits were 0.998, with the RMSEs being on the order of 2×10-4 for both seawater and freshwater. MATLAB surface plots are shown below:
 
-
+![Surface Fit](https://github.com/hokiespurs/water_ior/blob/master/refractive_index_surface_plots.jpg)
 
 The tabulated values used as input to this process are from Mobley (2010), which, in turn, are based on Austin and Halikas (1976), which, in turn, included data compiled from a variety of sources (all referenced therein). For anyone who wants to delve further into the index of refraction of seawater as a function of salinity, temperature, and pressure (with the latter not considered here), the Austin and Halikis paper is an excellent reference. There are likely newer and more accurate data than used in this 1976 study, but I haven’t found a clearer or more informative treatment of the subject. Note that greater precision in the value of n can be obtained by interpolating the tabulated values in Austin and Halikis (1976) than by using the equation above.
 
