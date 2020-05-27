@@ -1,7 +1,6 @@
 # water_ior
 Chris Parrish (2020)
 
-# Summary
 Use this empirical model to estimate the refractive index of freshwater and saltwater.  Data for the empirical model are from data published by Mobley (2010), which were based on data from Austin and Halikas (1976).
 
 ![n = aT^2 + b \lambda^2 + cT + d \lambda + e](https://render.githubusercontent.com/render/math?math=n%20%3D%20aT%5E2%20%2B%20b%20%5Clambda%5E2%20%2B%20cT%20%2B%20d%20%5Clambda%20%2B%20e)
@@ -49,17 +48,17 @@ ior = a*temp.^2 + b.*wavelength.^2 + c.*temp + d.*wavelength + e;
 ior = a*temp**2 + b*wavelength**2 + c * temp + d * wavelength + e
 ```
 
-# Background
+## Background
 While the internet might tell you that the refractive index of water is 1.33, it is actually a function of the wavelength of the light, as well as the salinity, temperature, and pressure of the water. If you are working with bathymetric lidar (λ = 532 nm, usually) or mapping bathymetry using structure from motion (SfM) photogrammetry, you probably don’t want to just use this generic, approximate value of 1.33. (If you're working in seawater and just need an approximate value for the visible spectrum, 1.34 is a better approximation than 1.33.)
 
-# Methods
+## Methods
 I developed the equation and coefficients above by reading tabulated values of the index of refraction from Mobley (2010) into MATLAB and doing surface fitting. The R2 values of my surface fits were 0.998, with the RMSEs being on the order of 2×10-4 for both seawater and freshwater. MATLAB surface plots are shown below:
 
 ![Surface Fit](https://github.com/hokiespurs/water_ior/blob/master/refractive_index_surface_plots.jpg)
 
 The tabulated values used as input to this process are from Mobley (2010), which, in turn, are based on Austin and Halikas (1976), which, in turn, included data compiled from a variety of sources (all referenced therein). For anyone who wants to delve further into the index of refraction of seawater as a function of salinity, temperature, and pressure (with the latter not considered here), the Austin and Halikis paper is an excellent reference. There are likely newer and more accurate data than used in this 1976 study, but I haven’t found a clearer or more informative treatment of the subject. Note that greater precision in the value of n can be obtained by interpolating the tabulated values in Austin and Halikis (1976) than by using the equation above.
 
-# References
-Austin, R.W., and G. Halikas, 1976. The Index of Refraction of Seawater. SIO Ref. No. 76-1, Scripps Institution of Oceanography. San Diego, California.
+## References
+> Austin, R.W., and G. Halikas, 1976. The Index of Refraction of Seawater. SIO Ref. No. 76-1, Scripps Institution of Oceanography. San Diego, California.
 
-Mobley, C.D. 2010. The optical properties of water. In Handbook of Optics (Eds. M. Bass), 3rd edition. McGraw-Hill, New York, Vol. 4, pp. 1.3–1.53.
+> Mobley, C.D. 2010. The optical properties of water. In Handbook of Optics (Eds. M. Bass), 3rd edition. McGraw-Hill, New York, Vol. 4, pp. 1.3–1.53.
