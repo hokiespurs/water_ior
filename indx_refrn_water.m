@@ -31,5 +31,18 @@ else
     disp('Not a valid water type. Valid types: s = saltwater, f = freshwater');
     return
 end
-%% Compute n
-indxRefn = a*temp^2 + b*wavelength^2 + c*temp + d*wavelength + e;
+%% Compute n (index of refraction)
+indxRefn = a.*temp.^2 + b.*wavelength.^2 + c.*temp + d.*wavelength + e;
+
+%% Warn if extrapolating data
+if temp<0
+    error('This empirical model should not be used for ice')
+elseif temp>30
+    warning('Warning: The temp is >30C, empirical model is extrapolating')
+end
+if wavelength<400
+    warning('Warning: wavelength<400nm, empirical model is extrapolating')
+elseif wavelength>700
+    warning('Warning: wavelength>700nm, empirical model is extrapolating')
+end
+	
