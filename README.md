@@ -1,5 +1,5 @@
 # water_ior
-Use this empirical model, created by Chris Parrish(2020), to estimate the refractive index of freshwater and saltwater.  Data for the empirical model are from data published by Mobley (2010), which were based on data from Austin and Halikas (1976).
+Use this empirical model, created by Chris Parrish (2020), to estimate the refractive index of freshwater and saltwater.  Data for the empirical model are from data published by Mobley (2010), which were based on data from Austin and Halikas (1976).
 
 ![n = aT^2 + b \lambda^2 + cT + d \lambda + e](https://render.githubusercontent.com/render/math?math=n%20%3D%20aT%5E2%20%2B%20b%20%5Clambda%5E2%20%2B%20cT%20%2B%20d%20%5Clambda%20%2B%20e)
 
