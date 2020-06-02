@@ -50,7 +50,7 @@ ior = a*temp**2 + b*wavelength**2 + c * temp + d * wavelength + e
 While the internet might tell you that the refractive index of water is 1.33, it is actually a function of the wavelength of the light, as well as the salinity, temperature, and pressure of the water. If you are working with bathymetric lidar (λ = 532 nm, usually) or mapping bathymetry using structure from motion (SfM) photogrammetry, you probably don’t want to just use this generic, approximate value of 1.33. (If you're working in seawater and just need an approximate value for the visible spectrum, 1.34 is a better approximation than 1.33.)
 
 ## Methods
-I developed the equation and coefficients above by reading tabulated values of the index of refraction from Mobley (2010) into MATLAB and doing surface fitting. The R2 values of my surface fits were 0.998, with the RMSEs being on the order of 2×10-4 for both seawater and freshwater. MATLAB surface plots are shown below:
+I developed the equation and coefficients above by reading tabulated values of the index of refraction from Mobley (2010) into MATLAB and doing surface fitting. The tablulated data are for atmospheric pressure. The R^2 values of my surface fits were 0.998, with the RMSEs being on the order of 2×10^-4 for both seawater and freshwater. MATLAB surface plots are shown below:
 
 ![Surface Fit](https://github.com/hokiespurs/water_ior/blob/master/refractive_index_surface_plots.jpg)
 
